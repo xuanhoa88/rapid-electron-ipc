@@ -14,21 +14,25 @@
   "homepage": "https://github.com/xuanhoa88/rapid-electron-ipc",
   "exports": {
     "./main": {
+      "default": "./src/main/index.js",
       "types": "./dist/main/index.d.ts",
       "import": "./dist/main/index.mjs",
       "require": "./dist/main/index.js"
     },
     "./preload": {
+      "default": "./src/preload/index.js",
       "types": "./dist/preload/index.d.ts",
       "import": "./dist/preload/index.mjs",
       "require": "./dist/preload/index.js"
     },
     "./renderer": {
+      "default": "./src/renderer/index.js",
       "types": "./dist/renderer/index.d.ts",
       "import": "./dist/renderer/index.mjs",
       "require": "./dist/renderer/index.js"
     },
     "./common": {
+      "default": "./src/common/index.js",
       "types": "./dist/common/index.d.ts",
       "import": "./dist/common/index.mjs",
       "require": "./dist/common/index.js"
@@ -38,7 +42,6 @@
     "node": ">=14.x"
   },
   "scripts": {
-    "postinstall": "npm run build",
     "build": "tsup",
     "rebuild": "npm run build",
     "lint": "eslint **/*.js",
