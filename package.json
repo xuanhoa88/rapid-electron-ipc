@@ -1,0 +1,58 @@
+{
+  "name": "rapid-electron-ipc",
+  "version": "1.0.0",
+  "author": "xuanguyen<xuan.0211@gmail.com>",
+  "license": "MIT",
+  "description": "Better ipc communication for electron，based on vscode source code.",
+  "keywords": [
+    "electron",
+    "vscode",
+    "browser",
+    "tab",
+    "ipc"
+  ],
+  "homepage": "https://github.com/xuanhoa88/rapid-electron-ipc",
+  "exports": {
+    "./main": {
+      "types": "./dist/main/index.d.ts",
+      "import": "./dist/main/index.mjs",
+      "require": "./dist/main/index.js"
+    },
+    "./preload": {
+      "types": "./dist/preload/index.d.ts",
+      "import": "./dist/preload/index.mjs",
+      "require": "./dist/preload/index.js"
+    },
+    "./renderer": {
+      "types": "./dist/renderer/index.d.ts",
+      "import": "./dist/renderer/index.mjs",
+      "require": "./dist/renderer/index.js"
+    },
+    "./common": {
+      "types": "./dist/common/index.d.ts",
+      "import": "./dist/common/index.mjs",
+      "require": "./dist/common/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=14.x"
+  },
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "tsup",
+    "rebuild": "npm run build",
+    "lint": "eslint **/*.js",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "devDependencies": {
+    "@types/node": "20.6.2",
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
+    "eslint": "8.57.1",
+    "eslint-config-prettier": "8.10.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "prettier": "3.3.3",
+    "tsup": "7.2.0",
+    "typescript": "4.9.5"
+  }
+}
